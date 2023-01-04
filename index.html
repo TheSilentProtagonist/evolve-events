@@ -1,23 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evolve Events</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Evolve Event</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <header>
-        <nav>
-
-            <a href="""#" >Home</a>
-            <a href="""#" >Support Evolve Events</a>
-
+    <header class="row align-center justify-space-between">
+        <h2>EvolveEvent</h2>
+        <nav class="social-icons">
+            <a href="#">
+                <i class="fab fa-facebook-square"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-linkedin"></i>
+            </a>
         </nav>
     </header>
+    <h1 class="main-header">Find Events</h1>
 
-    <script src="./js/script.js"></script>
-    <script src="./js/app.js"></script>
+    <!--Div to display more details when the 'view more detail' button is clicked on a movie. content of the div is created in javaScript-->
+    <div class="detail-display hide">
+    </div>
+
+    <div class="row justify-center">
+        <input class="search" type="text" placeholder="Please type in your city or location here">
+    </div>
+    <main>
+        <p class="no-search">Use the search box to find events near you.</p>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script src="js/app.js"></script>
 </body>
+
 </html>
