@@ -13,7 +13,14 @@ function displayMatches(matches) {
 
   for (match of matches) {
     itemWrapper.insertAdjacentHTML('beforeend', `
-    
+    <div class="event-item">
+      <h3>City: ${match.city}</h3>
+      <p>Event Type: ${match.event} </p>
+      <p>Venue: ${match.venue}</p>
+      <p>Event Description: ${match.description}</p>
+      <a href="${match.eventURL}" target="_blank">Go To Event</a><hr>
+      <a data-id="${match.placeholder}" href="https://www.google.com/maps" target="_blank">View Event Location</a>
+    </div>
     `)
     console.log(match);
   }
