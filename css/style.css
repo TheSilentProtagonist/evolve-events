@@ -3,6 +3,7 @@
     --primary: #53b2d8;
     --orange: #ffb300;
     --black: #363333;
+    --white: #fff;
 }
 
 /* RESETS -  overriding the browser style sheet*/
@@ -95,7 +96,7 @@ h1.main-header {
 }
 
 .detail-display > *:not(h2) {
-    color: var(--white);
+    color: var(--black);
     margin-top: 10px;
 }
 
@@ -137,31 +138,32 @@ main p.no-search {
 }
 
 
-main .movie-item {
+main .event-item {
     border: 3px solid var(--primary);
     border-radius: 5px;
     padding: 15px 10px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: rgb(5, 134, 128);
 }
 
-main .movie-item>*:not(:last-child) {
+main .event-item>*:not(:last-child) {
     margin-bottom: 8px;
 }
 
-main .movie-item h3 {
+main .event-item h3 {
     color: var(--white);
     font-size: 0.95rem;
 }
 
-main .movie-item p {
+main .event-item p {
     color: var(--white);
     font-size: 0.85rem;
     line-height: 1.3;
 }
 
-main .movie-item a {
+main .event-item a {
     border-bottom: 1px dashed var(--orange);
     color: var(--orange);
     font-size: 0.8rem;
