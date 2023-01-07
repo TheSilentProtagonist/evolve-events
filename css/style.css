@@ -149,7 +149,7 @@ main .event-item {
 }
 
 main .event-item>*:not(:last-child) {
-    margin-bottom: 8px;
+    margin-bottom: 8px;node
 }
 
 main .event-item h3 {
