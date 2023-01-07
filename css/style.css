@@ -1,187 +1,190 @@
 /* VARIABLES */
 :root {
-    --primary: #53b2d8;
-    --orange: #ffb300;
-    --black: #363333;
-    --white: #fff;
+  --primary: #53b2d8;
+  --orange: #ffb300;
+  --black: #363333;
+  --white: #fff;
 }
 
 /* RESETS -  overriding the browser style sheet*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: sans-serif;
-    background: #c7c5c544;
+  font-family: sans-serif;
+  background: #c7c5c544;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
-
 
 /* GlOBAL CLASSES - stylings that can be used more than once - reusable classes */
 .row,
 .column {
-    display: flex;
+  display: flex;
 }
 
 .row {
-    height: 60px;
+  height: 60px;
 }
 
 .column {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .justify-center {
-    justify-content: center;
+  justify-content: center;
 }
 
 .justify-space-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .align-center {
-    align-items: center;
+  align-items: center;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
-
 
 /***** CUSTOM STYLES *****/
 
 /*Header Styles*/
 header {
-    padding: 9px 5%;
-    background: var(--primary);
+  padding: 9px 5%;
+  background: var(--primary);
+  color: var(--black);
 }
 
-header h2,
+/* header h2,
 header nav i {
-    color: var(--black);
-}
+  color: var(--black);
+} */
 
 header nav i {
-    font-size: 1.5rem;
-    padding: 0 2px;
+  font-size: 1.5rem;
+  padding: 0 2px;
+  color: var(--black);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
 }
 
 /* Content Styles */
 h1.main-header {
-    text-align: center;
-    margin: 15px 0;
-    color: var(--black);
+  text-align: center;
+  margin: 15px 0;
+  color: var(--black);
 }
 
 .detail-display {
-    position: absolute;
-    top: 70px;
-    left: 0px;
-    right: 0;
-    margin: 0 auto;
-    width: 80%;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 25px;
-    border-radius: 5px;
+  position: absolute;
+  top: 70px;
+  left: 0px;
+  right: 0;
+  margin: 0 auto;
+  width: 80%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 25px;
+  border-radius: 5px;
 }
 
 .detail-display h2 {
-    color: var(--orange);
+  color: var(--orange);
 }
 
 .detail-display > *:not(h2) {
-    color: var(--black);
-    margin-top: 10px;
+  color: var(--black);
+  margin-top: 10px;
 }
 
 .detail-display p {
-    line-height: 1.4;
+  line-height: 1.4;
 }
 
 .detail-display a {
-    color: var(--orange);
-    border-bottom: 1px dashed var(--orange);
-    display: inline-block;
+  color: var(--orange);
+  border-bottom: 1px dashed var(--orange);
+  display: inline-block;
 }
 
 .search {
-    width: 400px;
-    margin-bottom: 30px;
-    padding: 7px 15px;
-    border-radius: 10px;
-    border: 1px solid var(--primary);
-    outline: none;
-    color: #555;
+  width: 400px;
+  margin-bottom: 30px;
+  padding: 7px 15px;
+  border-radius: 10px;
+  border: 1px solid var(--primary);
+  outline: none;
+  color: #555;
 }
 
 .search::placeholder {
-    color: var(--primary);
-    text-align: center;
+  color: var(--primary);
+  text-align: center;
 }
 
 main {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    padding: 0 5%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 0 5%;
 }
 
 main p.no-search {
-    grid-column: 1 / 5;
-    color: #888;
+  grid-column: 1 / 5;
+  color: #888;
 }
-
 
 main .event-item {
-    border: 3px solid var(--primary);
-    border-radius: 5px;
-    padding: 15px 10px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: rgb(5, 134, 128);
+  border: 3px solid var(--primary);
+  border-radius: 5px;
+  padding: 15px 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(5, 134, 128);
 }
 
-main .event-item>*:not(:last-child) {
-    margin-bottom: 8px;
+main .event-item > *:not(:last-child) {
+  margin-bottom: 8px;
 }
 
 main .event-item h3 {
-    color: var(--white);
-    font-size: 0.95rem;
+  color: var(--white);
+  font-size: 0.95rem;
 }
 
 main .event-item p {
-    color: var(--white);
-    font-size: 0.85rem;
-    line-height: 1.3;
+  color: var(--white);
+  font-size: 0.85rem;
+  line-height: 1.3;
 }
 
 main .event-item a {
-    border-bottom: 1px dashed var(--orange);
-    color: var(--orange);
-    font-size: 0.8rem;
+  border-bottom: 1px dashed var(--orange);
+  color: var(--orange);
+  font-size: 0.8rem;
 }
 
 #reset {
-    border: 1px solid var(--orange);
-    background-color: var(--orange);
-    color: var(--white);
-    font-size: 0.8rem;
-    padding: 10px;
-    border-radius: 5px;
-    margin-left: 20%;
-    width: 5%;
-    height: 5%;
-    font-size: 0.9rem;
+  border: 1px solid var(--orange);
+  background-color: var(--orange);
+  color: var(--white);
+  font-size: 0.8rem;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: 20%;
+  width: 5%;
+  height: 5%;
+  font-size: 0.9rem;
 }
 
 #reset:hover {
-    background-color: blue;
+  background-color: blue;
 }
