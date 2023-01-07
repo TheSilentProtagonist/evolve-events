@@ -31,7 +31,7 @@ function displayMatches(matches) {
               <p><b>City</b>: ${matchObj._embedded.venues[0].city.name} </p>
               <p><b>Country</b>: ${matchObj._embedded.venues[0].country.name} </p>
               <p><b>Postal Code</b>: ${matchObj._embedded.venues[0].postalCode} </p>
-              <a href=${matchObj.url}>View More Info About Event</a>
+              <a href=${matchObj.url} target="_blank">View More Info About Event</a>
                
               </div> 
             `);
