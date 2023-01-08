@@ -19,6 +19,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   </head>
 
   <body>
@@ -66,12 +67,17 @@
       />
     </div>
     <main>
-        <p class="no-search">Use the search box to find events near you.</p>
+      <p class="no-search">Use the search box to find events near you.</p>
     </main>
+    <div id="map"></div>
     <script
       src="https://code.jquery.com/jquery-3.6.3.min.js"
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
       crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9JbnPQ6SRFQ6BdafXmHHL2E8DGPnyiRM&callback=initMap&v=weekly"
+      defer
     ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
