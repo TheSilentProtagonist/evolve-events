@@ -1,6 +1,5 @@
 // Getting API details
 var apiKey = "A3GWr1bAKM9umGLc1IVcH5AWbfGcFkxQ";
-var googleAPI = "AIzaSyC9JbnPQ6SRFQ6BdafXmHHL2E8DGPnyiRM";
 var apiURL =
   "https://app.ticketmaster.com/discovery/v2/events.json?sort=random&countryCode=GB&apikey=";
 var proxyURL = "https://api.allorigins.win/get?url=";
@@ -10,12 +9,13 @@ var searchInput = $(".search");
 var itemWrapper = $("main");
 var exitButton = $("#reset");
 var map;
+
 // creates a map
 function initMap() {
   var mapDiv = document.getElementById("map");
   map = new google.maps.Map(mapDiv, {
     center: { lat: 51.509865, lng: -0.118092 },
-    zoom: 10,
+    zoom: 6,
   });
 }
 
