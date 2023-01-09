@@ -139,6 +139,8 @@ main {
 main p.no-search {
   grid-column: 1 / 5;
   color: #888;
+  margin: 0 auto;
+  padding-bottom: 20px;
 }
 
 main .event-item {
@@ -187,4 +189,10 @@ main .event-item a {
 
 #reset:hover {
   background-color: blue;
+}
+
+#map {
+  width: 500px;
+  height: 400px;
+  margin: 0 auto;
 }
