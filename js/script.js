@@ -52,7 +52,7 @@ function displayMatches(matches) {
               <p><b>Event Date</b>: ${matchObj.dates.start.localDate} </p>
               <p><b>Event Time</b>: ${matchObj.dates.start.localTime} </p>
               <p><b>Venue Name</b>: ${matchObj._embedded.venues[0].name} </p>
-              <a href=${matchObj.url} target="_blank">View More Info About Event</a>
+              <a href=${matchObj.url} target="_blank">Find Out More</a>
               </div> 
             `);
       addMarker(map, matchObj);
