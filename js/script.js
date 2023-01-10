@@ -1,7 +1,7 @@
 // Getting API details
 var apiKey = "A3GWr1bAKM9umGLc1IVcH5AWbfGcFkxQ";
 var apiURL =
-  "https://app.ticketmaster.com/discovery/v2/events.json?sort=random&countryCode=GB&apikey=";
+  "https://app.ticketmaster.com/discovery/v2/events.json?sort=random&apikey=";
 var proxyURL = "https://api.allorigins.win/get?url=";
 
 // Targeting html elements and store to variables
