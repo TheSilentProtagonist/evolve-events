@@ -4,7 +4,7 @@
     --orange: #ff715b;
     --black: #4c5454;
     --white: #ffffff;
-    --green: #16DB93;
+    --green: #16db93;
 }
 
 /* RESETS -  overriding the browser style sheet*/
@@ -23,7 +23,6 @@ a {
     text-decoration: none;
 }
 
-
 /* GlOBAL CLASSES - stylings that can be used more than once - reusable classes */
 .row,
 .column {
@@ -33,7 +32,6 @@ a {
 .row {
     min-height: 60px;
     margin: 120px 0;
-
 }
 
 .column {
@@ -56,7 +54,6 @@ a {
     display: none;
 }
 
-
 /***** CUSTOM STYLES *****/
 
 /*Header Styles*/
@@ -65,7 +62,7 @@ header {
     background: var(--white);
 }
 
-header h2,
+/* header h2, */
 header nav i {
     color: var(--orange);
 }
@@ -73,6 +70,11 @@ header nav i {
 header nav i {
     font-size: 1.5rem;
     padding: 0 2px;
+    color: var(--blue);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
 }
 
 /* Content Styles */
@@ -138,20 +140,21 @@ main {
 main p.no-search {
     grid-column: 1 / 5;
     color: #888;
+    margin: 0 auto;
+    padding-bottom: 20px;
 }
 
-
 main .event-item {
-    border: 3px solid var(--primary);
-    border-radius: 5px;
-    padding: 15px 10px;
+    border: 3px solid var(--white);
+    border-radius: 8px;
+    padding: 20px 20px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: rgb(5, 134, 128);
+    background-color: var(--green);
 }
 
-main .event-item>*:not(:last-child) {
+main .event-item > *:not(:last-child) {
     margin-bottom: 8px;
 }
 
@@ -187,4 +190,10 @@ main .event-item a {
 
 #reset:hover {
     background-color: blue;
+}
+
+#map {
+    width: 500px;
+    height: 400px;
+    margin: 0 auto;
 }
