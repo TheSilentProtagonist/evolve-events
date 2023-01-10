@@ -10,6 +10,7 @@ var itemWrapper = $("main");
 var exitButton = $("#reset");
 var map;
 
+
 // creates a map
 function initMap() {
   var mapDiv = document.getElementById("map");
@@ -35,11 +36,15 @@ function displayMatches(matches) {
   itemWrapper.html(""); // clear off the paragraph text when a city is entered
 
   if (!matches) {
-    itemWrapper.html(`<p class="no-search">No results found.</p>`); // Displaying no results found if city entered is not found.
+    itemWrapper.html(`<p class="no-search">No results found.</p>`); // Displaying no results found if city entered is not found
+    
+  
   } else {
+    
     for (var matchObj of matches) {
+
       // Loop through the the events for a city and display them on the screen with their titles, date, time, venue and background image as shown in the var=events (console.log(events) to see the various properties to pass in to view title and the rest). Styling of the background image is done in CSS
-      itemWrapper.append(`         
+      itemWrapper.append(`      
               <div class="event-item" style="background-image:
               linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
               url(${matchObj.images[0].url})">
@@ -57,10 +62,12 @@ function displayMatches(matches) {
 
 // Function to get events for city name entered by user.
 function getEventData(event) {
+  
   var keyCode = event.keyCode; // Get the key that was pressed
   var searchText = searchInput.val().trim(); // Gets the input entered by user and remove any spacings using the trim(). (the database is not case sensitive so no need to use the toLowerCase()
-
+  
   if (keyCode === 13 && searchText) {
+    itemWrapper.html(`<div class="loader"></div>`)
     // Checking to see if the key pressed is the enter key and if some text is typed in the input box
 
     // Making an AJAX Request to get data from a server using the Ticketmaster API. The proxyURL and encodeURIComponent() function takes care of the CORS issue in the browser
