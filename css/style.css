@@ -1,9 +1,10 @@
 /* VARIABLES */
 :root {
-    --primary: #53b2d8;
-    --orange: #ffb300;
-    --black: #363333;
-    --white: #fff;
+    --primary: #41afc8;
+    --orange: #ff715b;
+    --black: #4c5454;
+    --white: #ffffff;
+    --green: #16DB93;
 }
 
 /* RESETS -  overriding the browser style sheet*/
@@ -15,7 +16,7 @@
 
 body {
     font-family: sans-serif;
-    background: #c7c5c544;
+    background: #ffffff;
 }
 
 a {
@@ -30,7 +31,9 @@ a {
 }
 
 .row {
-    height: 60px;
+    min-height: 60px;
+    margin: 120px 0;
+
 }
 
 .column {
@@ -59,12 +62,12 @@ a {
 /*Header Styles*/
 header {
     padding: 9px 5%;
-    background: var(--primary);
+    background: var(--white);
 }
 
 header h2,
 header nav i {
-    color: var(--black);
+    color: var(--orange);
 }
 
 header nav i {
@@ -115,13 +118,13 @@ h1.main-header {
     margin-bottom: 30px;
     padding: 7px 15px;
     border-radius: 10px;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--black);
     outline: none;
-    color: #555;
+    color: var(--black);
 }
 
 .search::placeholder {
-    color: var(--primary);
+    color: var(--black);
     text-align: center;
 }
 
