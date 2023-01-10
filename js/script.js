@@ -37,6 +37,11 @@ function displayMatches(matches) {
   if (!matches) {
     itemWrapper.html(`<p class="no-search">No results found.</p>`); // Displaying no results found if city entered is not found.
   } else {
+    map.setCenter({
+      lat: Number(matches[0]._embedded.venues[0].location.latitude),
+      lng: Number(matches[0]._embedded.venues[0].location.longitude),
+    });
+    map.setZoom(10);
     for (var matchObj of matches) {
       // Loop through the the events for a city and display them on the screen with their titles, date, time, venue and background image as shown in the var=events (console.log(events) to see the various properties to pass in to view title and the rest). Styling of the background image is done in CSS
       itemWrapper.append(`         
