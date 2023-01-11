@@ -30,14 +30,14 @@ As front end developer – present a plan of how you would build our website. Th
 # Project deliverables
 
 
-1. Use Bootstrap.
+1. Use Bootstrap. - [TODO]
 2. Be deployed to GitHub Pages.
 3. Be interactive (in other words, accept and respond to user input).
 4. Use at least two server-side APIs
 5. Does not use alerts, confirms, or prompts (use modals).
 6. Use client-side storage to store persistent data.
-7. Be responsive.
-8. Have a polished UI.
+7. Be responsive. - [TODO]
+8. Have a polished UI. - [TODO]
 9. Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class/id naming conventions, indentation, quality comments, and so on).
 10. Have a quality README (including a unique name, description, technologies used, screenshot, and link to the deployed application).
 

@@ -4,170 +4,53 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Evolve Event</title>
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-            crossorigin="anonymous"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Evolve Events</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="./css/style.css">
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-        
-    </head>
 
-    <body>
-        <header class="row align-center justify-space-between">
-            <h2>EvolveEvent</h2>
-            <nav class="social-icons">
-                <a href="#">
-                    <i class="fab fa-facebook-square"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-linkedin"></i>
-                </a>
+    </head>
+    <body class="container">
+
+        <header>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
             </nav>
         </header>
-        <h1 class="main-header">Find Events</h1>
 
-        <!--Div to display more details when the 'view more detail' button is clicked on a movie. content of the div is created in javaScript-->
-        <div class="detail-display hide"></div>
+        <div class="container-fluid search-container">
+            <h1>
+                Evolve Events
+            </h1>
 
-        <div class="row justify-center align-center">
-            <input
-                class="search"
-                type="text"
-                placeholder="Please type in your city or location here"
-            />
+            <div>
+                
+            </div>
+
         </div>
+
         <main>
-            <div class="event-item">
-                <h3>Event Title:</h3>
-                <p>Event Date/Time:</p>
-                <p>
-                    Event Description: Voluptate, rerum officiis ipsum maxime
-                    consectetur possimus laboriosam, totam perspiciatis
-                    molestias quasi doloremque nam?
-                </p>
-                <a
-                    data-id="${matchObj.imdbID}"
-                    href="https://www.google.com/maps"
-                    target="_blank"
-                    >View Event Location</a
-                >
+
+            <div class="card-box">
+                <div class="card">
+
+                    <h3 class="card-title">Event Title</h3>
+
+                    <h3 class="card-location">Event Location</h3>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, dolor, recusandae distinctio modi ab neque voluptatibus beatae aut ex voluptas molestiae quam, sunt et dignissimos error nobis architecto numquam necessitatibus!</p>
+
+                </div>
             </div>
-            
-            <!--<p class="no-search">Use the search box to find events near you.</p>!-->
-            <div class="event-item">
-                <h3>Event Title:</h3>
-                <p>Event Date/Time:</p>
-                <p>
-                    Event Description: Lorem ipsum dolor, sit amet consectetur
-                    adipisicing elit. Reprehenderit quo corporis ex nesciunt rem
-                    voluptatem molestiae?
-                </p>
-                <a
-                    data-id="${matchObj.imdbID}"
-                    href="https://www.google.com/maps"
-                    target="_blank"
-                    >View Event Location</a
-                > </a>
-            </div>
-            <div class="event-item">
-                <h3>Event Title:</h3>
-                <p>Event Date/Time:</p>
-                <p>
-                    Event Description: Voluptate, rerum officiis ipsum maxime
-                    consectetur possimus laboriosam, totam perspiciatis
-                    molestias quasi doloremque nam?
-                </p>
-                <a
-                    data-id="${matchObj.imdbID}"
-                    href="https://www.google.com/maps"
-                    target="_blank"
-                    >View Event Location</a
-                >
-            </div>
-            <div class="event-item">
-                <h3>Event Title:</h3>
-                <p>Event Date/Time:</p>
-                <p>
-                    Event Description: Voluptate, rerum officiis ipsum maxime
-                    consectetur possimus laboriosam, totam perspiciatis
-                    molestias quasi doloremque nam?
-                </p>
-                <a
-                    data-id="${matchObj.imdbID}"
-                    href="https://www.google.com/maps"
-                    target="_blank"
-                    >View Event Location</a
-                >
-            </div>
+
         </main>
 
-<<<<<<< HEAD
-        <script
-            src="https://code.jquery.com/jquery-3.6.3.min.js"
-            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
-            crossorigin="anonymous"
-        ></script>
-        <script src="./js/script.js"></script>
-        <script src="./js/app.js"></script>
+        <footer>
+
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     </body>
-=======
-    <h1 class="main-header">Find Events</h1>
-
-    <!--Div to display more details when the 'view more detail' button is clicked on a movie. content of the div is created in javaScript-->
-    <div class="detail-display hide"></div>
-
-    <div class="row justify-center">
-      <input
-        class="search"
-        type="text"
-        placeholder="Please type in your city or location here"
-      />
-    </div>
-    <main>
-      <p class="no-search">Use the search box to find events near you.</p>
-
-      <!-- <div class="loader"></div> -->
-    </main>
-    <div id="map"></div>
-    <!-- footer -->
-    <footer>
-      <p class="copyright">EvolveEvent By Group 3 © 2023</p>
-    </footer>
-    <script
-      src="https://code.jquery.com/jquery-3.6.3.min.js"
-      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9JbnPQ6SRFQ6BdafXmHHL2E8DGPnyiRM&callback=initMap&v=weekly"
-      defer
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-
-    <script src="js/script.js"></script>
-  </body>
->>>>>>> f5a7032b609c9293d0d5effa9f8df7b1de03782f
 </html>
