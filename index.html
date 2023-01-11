@@ -24,19 +24,7 @@
 
   <body>
     <header>
-      <!-- <h2>EvolveEvent</h2>
-      <nav class="social-icons">
-        <a href="#">
-          <i class="fab fa-facebook-square"></i>
-        </a>
-        <a href="#">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="#">
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </nav> -->
-      <nav class="navbar bg-body-tertiary">
+      <nav class="navbar navbar-expand-md bg-body-tertiary">
         <div class="container-fluid">
           <span class="navbar-brand mb-0 h1">EvolveEvent</span>
           <span class="navbar-text">
@@ -56,9 +44,6 @@
 
     <h1 class="main-header">Find Events</h1>
 
-    <!--Div to display more details when the 'view more detail' button is clicked on a movie. content of the div is created in javaScript-->
-    <div class="detail-display hide"></div>
-
     <div class="row justify-center">
       <input
         class="search"
@@ -66,12 +51,14 @@
         placeholder="Please type in your city or location here"
       />
     </div>
+
     <main>
       <p class="no-search">Use the search box to find events near you.</p>
-
+      <!--<div class="event-item"></div>-->
       <!-- <div class="loader"></div> -->
     </main>
     <div id="map"></div>
+
     <!-- footer -->
     <footer>
       <p class="copyright">EvolveEvent By Group 3 © 2023</p>
