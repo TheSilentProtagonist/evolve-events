@@ -7,7 +7,6 @@ var proxyURL = "https://api.allorigins.win/get?url=";
 // Targeting html elements and store to variables
 var searchInput = $(".search");
 var itemWrapper = $("main");
-var exitButton = $("#reset");
 var map;
 
 
@@ -36,9 +35,9 @@ function displayMatches(matches) {
   itemWrapper.html(""); // clear off the paragraph text when a city is entered
 
   if (!matches) {
-    itemWrapper.html(`<p class="no-search">No results found.</p>`); // Displaying no results found if city entered is not found
-    
-  
+    itemWrapper.html(`<p class="no-search">No Events Found.</p>`); // Displaying no events found if city entered is not found
+
+
   } else {
     map.setCenter({
       lat: Number(matches[0]._embedded.venues[0].location.latitude),
@@ -66,10 +65,10 @@ function displayMatches(matches) {
 
 // Function to get events for city name entered by user.
 function getEventData(event) {
-  
+
   var keyCode = event.keyCode; // Get the key that was pressed
   var searchText = searchInput.val().trim(); // Gets the input entered by user and remove any spacings using the trim(). (the database is not case sensitive so no need to use the toLowerCase()
-  
+
   if (keyCode === 13 && searchText) {
     itemWrapper.html(`<div class="loader"></div>`)
     // Checking to see if the key pressed is the enter key and if some text is typed in the input box
@@ -79,11 +78,13 @@ function getEventData(event) {
       proxyURL + encodeURIComponent(apiURL + apiKey + `&city=${searchText}`)
     ).then(function (data) {
       var events = JSON.parse(data.contents)._embedded.events;
-      console.log(events);
-      displayMatches(events); // fetching events from external server based on the city the user types in - the .get() method in jQuery makes this so easy it's like the fetch method in vanilla javaScript but it does all the json and parsing for us
-    }); 
+      //console.log(events);
+      displayMatches(events);   // fetching events from external server based on the city the user types in - the .get() method in jQuery makes this so easy it's like the fetch method in vanilla javaScript but it does all the json and parsing for us
+  })
+  .catch(error => itemWrapper.html(`<p class="no-search">NO EVENTS FOUND!!.</p>`) // Displaying no events found if city entered is not within API's search radius
+  );
   }
-};  
+};
 
 
 
