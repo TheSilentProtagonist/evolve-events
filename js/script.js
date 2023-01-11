@@ -77,9 +77,9 @@ function getEventData(event) {
         //console.log(events);
         displayMatches(events); // fetching events from external server based on the city the user types in - the .get() method in jQuery makes this so easy it's like the fetch method in vanilla javaScript but it does all the json and parsing for us
       })
-      .catch(
-        (error) => itemWrapper.html(`<p class="no-search">NO EVENTS FOUND</p>`) // Displaying no events found if city entered is not within API's search radius
-      );
+      /*.catch(
+        (error) => itemWrapper.html(`<p class="no-search">NO EVENTS FOUND</p>`) 
+      ); // Displaying no events found if city entered is not within API's search radius*/ 
   }
 }
 
