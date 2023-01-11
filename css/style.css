@@ -107,7 +107,7 @@ main {
 
 main p.no-search {
   grid-column: 1 / 5;
-  color: #888;
+  color: #2c2c2c;
   margin: 0 auto;
   padding-bottom: 20px;
 }
