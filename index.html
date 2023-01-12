@@ -4,73 +4,123 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Evolve Events</title>
+        <title>Evolve Event</title>
         <link
             rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
         />
-        <link rel="stylesheet" href="./css/style.css"/>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        
     </head>
 
-
-
-    <body class="container">
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Evolve Events</a>
-
-                    <div class="center-nav collapse navbar-collapse">
-                        <ul class=" navbar-nav">
-                            <li class="nav-item">
-                                <a
-                                    class="nav-link active"
-                                    aria-current="page"
-                                    href="#"
-                                    >Home</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+    <body>
+        <header class="row align-center justify-space-between">
+            <h2>EvolveEvent</h2>
+            <nav class="social-icons">
+                <a href="#">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-linkedin"></i>
+                </a>
             </nav>
         </header>
+        <h1 class="main-header">Find Events</h1>
 
+        <!--Div to display more details when the 'view more detail' button is clicked on a movie. content of the div is created in javaScript-->
+        <div class="detail-display hide"></div>
+
+        <div class="row justify-center align-center">
+            <input
+                class="search"
+                type="text"
+                placeholder="Please type in your city or location here"
+            />
+        </div>
         <main>
-            <div
-                class="row align-items-center justify-content-center search-container"
-            >
-                <h1 class="justify-content-center">Evolve Events</h1>
-
-                <div class="search"></div>
+            <div class="event-item">
+                <h3>Event Title:</h3>
+                <p>Event Date/Time:</p>
+                <p>
+                    Event Description: Voluptate, rerum officiis ipsum maxime
+                    consectetur possimus laboriosam, totam perspiciatis
+                    molestias quasi doloremque nam?
+                </p>
+                <a
+                    data-id="${matchObj.imdbID}"
+                    href="https://www.google.com/maps"
+                    target="_blank"
+                    >View Event Location</a
+                >
             </div>
-
-            <div class="card-box">
-                <div class="card">
-                    <h3 class="card-title">Event Title</h3>
-
-                    <h3 class="card-location">Event Location</h3>
-
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Voluptates, dolor, recusandae distinctio modi ab neque
-                        voluptatibus beatae aut ex voluptas molestiae quam, sunt
-                        et dignissimos error nobis architecto numquam
-                        necessitatibus!
-                    </p>
-                </div>
+            
+            <!--<p class="no-search">Use the search box to find events near you.</p>!-->
+            <div class="event-item">
+                <h3>Event Title:</h3>
+                <p>Event Date/Time:</p>
+                <p>
+                    Event Description: Lorem ipsum dolor, sit amet consectetur
+                    adipisicing elit. Reprehenderit quo corporis ex nesciunt rem
+                    voluptatem molestiae?
+                </p>
+                <a
+                    data-id="${matchObj.imdbID}"
+                    href="https://www.google.com/maps"
+                    target="_blank"
+                    >View Event Location</a
+                > </a>
+            </div>
+            <div class="event-item">
+                <h3>Event Title:</h3>
+                <p>Event Date/Time:</p>
+                <p>
+                    Event Description: Voluptate, rerum officiis ipsum maxime
+                    consectetur possimus laboriosam, totam perspiciatis
+                    molestias quasi doloremque nam?
+                </p>
+                <a
+                    data-id="${matchObj.imdbID}"
+                    href="https://www.google.com/maps"
+                    target="_blank"
+                    >View Event Location</a
+                >
+            </div>
+            <div class="event-item">
+                <h3>Event Title:</h3>
+                <p>Event Date/Time:</p>
+                <p>
+                    Event Description: Voluptate, rerum officiis ipsum maxime
+                    consectetur possimus laboriosam, totam perspiciatis
+                    molestias quasi doloremque nam?
+                </p>
+                <a
+                    data-id="${matchObj.imdbID}"
+                    href="https://www.google.com/maps"
+                    target="_blank"
+                    >View Event Location</a
+                >
             </div>
         </main>
 
-        <footer></footer>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+            crossorigin="anonymous"
+        ></script>
+        <script src="./js/script.js"></script>
+        <script src="./js/app.js"></script>
     </body>
 </html>
