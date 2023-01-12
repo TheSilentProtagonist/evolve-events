@@ -1,244 +1,177 @@
 /* VARIABLES */
 :root {
-    --primary: #41afc8;
-    --orange: #ff715b;
-    --black: #4c5454;
-    --white: #ffffff;
-    --green: #16db93;
+  --primary: #53b2d8;
+  --orange: #ffb300;
+  --black: #363333;
+  --white: #fff;
 }
 
 /* RESETS -  overriding the browser style sheet*/
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* border: 1px solid red; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: sans-serif;
-    background: #ffffff;
+  font-family: sans-serif;
+  background: #c7c5c544;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* GlOBAL CLASSES - stylings that can be used more than once - reusable classes */
 .row,
 .column {
-    display: flex;
-
+  display: flex;
 }
 
 .row {
-    min-height: 60px;
-    margin: 70px 0;
-    justify-content: center;
+  height: 60px;
 }
 
 .column {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .justify-center {
-    justify-content: center;
+  justify-content: center;
 }
 
 .justify-space-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .align-center {
-    align-items: center;
+  align-items: center;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 /***** CUSTOM STYLES *****/
 
 /*Header Styles*/
 header {
-    padding: 9px 5%;
-    background: var(--white);
+  padding: 9px 5%;
+  background: var(--primary);
+  color: var(--black);
 }
 
-/* header h2, */
+/* header h2,
+header nav i {
+  color: var(--black);
+} */
 
-header h2 {
-    color: var(--orange);
+header nav i {
+  font-size: 1.5rem;
+  padding: 0 2px;
+  color: var(--black);
 }
-
-header nav a i {
-    font-size: 1.5rem;
-    padding: 0 2px;
-    color: var(--orange);
-}
-
 
 .navbar-brand {
-    font-size: 1.5rem;
-    color: var(--orange);
+  font-size: 1.5rem;
 }
 
 /* Content Styles */
-
 h1.main-header {
-    text-align: center;
-    margin: 120px 0;
-    color: var(--orange);
-}
-
-.detail-display {
-    position: absolute;
-    top: 70px;
-    left: 0px;
-    right: 0;
-    margin: 0 auto;
-    width: 80%;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 25px;
-    border-radius: 5px;
-}
-
-.detail-display h2 {
-    color: var(--orange);
-}
-
-.detail-display>*:not(h2) {
-    color: var(--black);
-    margin-top: 10px;
-}
-
-.detail-display p {
-    line-height: 1.4;
-}
-
-.detail-display a {
-    color: var(--orange);
-    border-bottom: 1px dashed var(--orange);
-    display: inline-block;
+  text-align: center;
+  margin: 15px 0;
+  color: var(--black);
 }
 
 .search {
-    width: 400px;
-    margin-bottom: 30px;
-    padding: 7px 15px;
-    border-radius: 18px;
-    border: 2px solid var(--green);
-    outline: none;
-    color: var(--black);
+  width: 400px;
+  margin-bottom: 30px;
+  padding: 7px 15px;
+  border-radius: 10px;
+  border: 1px solid var(--primary);
+  outline: none;
+  color: #555;
 }
 
 .search::placeholder {
-    color: var(--black);
-    text-align: center;
+  color: var(--primary);
+  text-align: center;
 }
 
 main {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    padding: 0 5%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 0 5%;
 }
 
 main p.no-search {
-    grid-column: 1 / 5;
-    color: #2c2c2c;
-    margin: 0 auto;
-    padding-bottom: 20px;
+  grid-column: 1 / 5;
+  color: #2c2c2c;
+  margin: 0 auto;
+  padding-bottom: 20px;
 }
 
 main .event-item {
-    border: 4px solid var(--white);
-    border-radius: 13px;
-    padding: 35px 35px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: var(--green);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    /* background: rgb(22,219,147); */
-    background-image: linear-gradient(to bottom, rgba(22,219,147,0.4), rgba(65,175,200, 0.4));
-    min-width: 340px;
-    min-height: 340px;
-    max-width: 470px;
-
+  border: 3px solid var(--primary);
+  border-radius: 5px;
+  padding: 15px 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(5, 134, 128);
 }
 
-main .event-item>*:not(:last-child) {
-    margin-bottom: 8px;
+main .event-item > *:not(:last-child) {
+  margin-bottom: 8px;
 }
 
 main .event-item h3 {
-    color: var(--white);
-    font-size: 1.4rem;
+  color: var(--white);
+  font-size: 0.95rem;
 }
 
 main .event-item p {
-    color: var(--white);
-    font-size: 1rem;
-    line-height: 1.4;
+  color: var(--white);
+  font-size: 0.85rem;
+  line-height: 1.3;
 }
 
 main .event-item a {
-    border-bottom: 1px dashed var(--orange);
-    color: var(--orange);
-    font-size: 1.1rem;
-}
-
-#reset {
-    border: 1px solid var(--orange);
-    background-color: var(--orange);
-    color: var(--white);
-    font-size: 0.8rem;
-    padding: 10px;
-    border-radius: 5px;
-    margin-left: 20%;
-    width: 5%;
-    height: 5%;
-    font-size: 0.9rem;
-}
-
-#reset:hover {
-    background-color: blue;
+  border-bottom: 1px dashed var(--orange);
+  color: var(--orange);
+  font-size: 0.8rem;
 }
 
 #map {
-    width: 500px;
-    height: 400px;
-    margin: 0 auto;
+  width: 500px;
+  height: 400px;
+  margin: 0 auto;
 }
 
 /* Loader */
 main .loader {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    z-index: 1;
-    width: 100px;
-    height: 100px;
-    margin: -76px 0 0 -76px;
-    border: 12px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 12px solid var(--primary);
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  margin: -76px 0 0 -76px;
+  border: 12px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 12px solid var(--primary);
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
 }
 
 footer {
-      margin-left: 0.5em;
-    width: 100%;
-    line-height: 10px;
-    font-size: 0.9em;
-    text-align: left;
-    bottom: 0;
+  margin-left: 0.5em;
+  width: 100%;
+  line-height: 10px;
+  font-size: 0.9em;
+  text-align: left;
+  bottom: 0;
 }
 
 @media (max-width: 768px) {
@@ -251,11 +184,10 @@ footer {
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

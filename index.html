@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Evolve Event</title>
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-            crossorigin="anonymous"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-        <link rel="stylesheet" href="./css/style.css">
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-        
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evolve Event</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  </head>
 
   <body>
     <header>
@@ -43,10 +42,9 @@
       </nav>
     </header>
 
-        <h1 class="main-header">Find Events</h1>
+    <h1 class="main-header">Find Events</h1>
 
-    <!--Div to display more details when the 'view more detail' button is clicked on a movie. content of the div is created in javaScript-->
-    <div class="detail-display hide"></div>
+
 
     <div class="row justify-center">
       <input
@@ -55,12 +53,14 @@
         placeholder="Please type in your city or location here"
       />
     </div>
+
     <main>
       <p class="no-search">Use the search box to find events near you.</p>
-
+      <!--<div class="event-item"></div>-->
       <!-- <div class="loader"></div> -->
     </main>
     <div id="map"></div>
+
     <!-- footer -->
     <footer>
       <p class="copyright">EvolveEvent By Group 3 © 2023</p>
@@ -85,6 +85,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="./js/script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
