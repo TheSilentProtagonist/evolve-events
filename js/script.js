@@ -50,7 +50,7 @@ function displayMatches(matches) {
       // Loop through the the events for a city and display them on the screen with their titles, date, time, venue and background image as shown in the var=events (console.log(events) to see the various properties to pass in to view title and the rest). Styling of the background image is done in CSS
       itemWrapper.append(`      
               <div class="event-item" style="background-image:
-              linear-gradient(180deg, rgba(22,219,147,0.4) 0%, rgba(65,175,200,0.4) 100%)
+              linear-gradient(180deg, rgba(22,219,147,0.4) 0%, rgba(65,175,200,0.4) 100%),
               url(${matchObj.images[0].url})">
               <h3>Event Title: ${matchObj.name}</h3>
               <p><b>Event Date</b>: ${matchObj.dates.start.localDate} </p>
