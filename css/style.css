@@ -35,7 +35,6 @@ a {
 .row,
 .column {
         display: flex;
-
 }
 
 .row {
@@ -112,10 +111,25 @@ header nav a i {
     background-color: var(--green);
     min-height: 100px;
     margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-p.copyright {
+footer {
+    width: 100%;
+    font-size:1.3em;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+}
+
+
+p.copyright {
+    padding: 20px;
 }
 
 
@@ -272,16 +286,6 @@ main .loader {
     border-top: 12px solid var(--primary);
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
-}
-
-footer {
-    width: 100%;
-    font-size:1.3em;
-    text-align: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
 }
 
 @media (max-width: 768px) {
