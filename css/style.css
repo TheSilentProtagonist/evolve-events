@@ -147,7 +147,7 @@ main {
 
 main p.no-search {
     grid-column: 1 / 5;
-    color: #888;
+    color: #2c2c2c;
     margin: 0 auto;
     padding-bottom: 20px;
 }
@@ -164,8 +164,8 @@ main .event-item {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background: rgb(22,219,147);
-    background: linear-gradient(180deg, rgba(22,219,147,1) 0%, rgba(65,175,200,1) 100%);
+    /* background: rgb(22,219,147); */
+    background-image: linear-gradient(to bottom, rgba(22,219,147,0.4), rgba(65,175,200, 0.4));
     min-width: 340px;
     min-height: 340px;
     max-width: 470px;
@@ -233,13 +233,21 @@ main .loader {
 }
 
 footer {
-    position: fixed;
-    margin-left: 0.5em;
+      margin-left: 0.5em;
     width: 100%;
     line-height: 10px;
     font-size: 0.9em;
     text-align: left;
     bottom: 0;
+}
+
+@media (max-width: 768px) {
+  #map {
+    width: 100%;
+  }
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @keyframes spin {
