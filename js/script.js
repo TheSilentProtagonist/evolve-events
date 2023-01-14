@@ -98,7 +98,7 @@ function findOutMore(eventId) {
       eventDetails.html(`                     
   <h2>Title: ${detail[0].name}</h2>
   <h3>Genre: ${detail[0].classifications[0].genre.name}</h3>
-  <p><strong>Event Info:</strong> ${detail[0].info + " " + detail[0].pleaseNote + detail[0].ticketLimit.info + "."}</p>
+  <p><strong>Event Info:</strong> ${detail[0].pleaseNote + detail[0].ticketLimit.info + "."}</p>
   <p><strong>Ticket Price Range:</strong> ${detail[0].priceRanges[0].currency + detail[0].priceRanges[0].min + " - " + detail[0].priceRanges[1].currency + detail[0].priceRanges[1].max}</p>
   <a href=${detail[0].url} target="_blank">View Seats & Buy a Ticket</a>
   <button id="reset" onclick="this.parentNode.remove(); return false;">Exit</button>`); // onclick="this.parentNode.remove(); return false;" removes the eventDetail when clicked. It has to be written this way as the button is inside the div which is displayed on the fly.
