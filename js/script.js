@@ -91,20 +91,35 @@ function findOutMore(eventId) {
   $.get(proxyURL + encodeURIComponent(apiURL + apiKey + `&id=${eventId}`))
     .then(function (data) {
       var detail = JSON.parse(data.contents)._embedded.events;
-      //console.log(detail);
+      console.log(detail);
       var eventDetails = $('.detail-display'); // Targeting the div that holds the details to be displayed
 
-      // Writing the content of the div using javaScript - styling is already done in CSS
+      if (detail[0].pleaseNote) {
+        // Writing the content of the div using javaScript - styling is already done in CSS
       eventDetails.html(`                     
-  <h2>Title: ${detail[0].name}</h2>
-  <h3>Genre: ${detail[0].classifications[0].genre.name}</h3>
-  <p><strong>Event Info:</strong> ${detail[0].pleaseNote + detail[0].ticketLimit.info + "."}</p>
-  <p><strong>Ticket Price Range:</strong> ${detail[0].priceRanges[0].currency + detail[0].priceRanges[0].min + " - " + detail[0].priceRanges[1].currency + detail[0].priceRanges[1].max}</p>
-  <a href=${detail[0].url} target="_blank">View Seats & Buy a Ticket</a>
-  <button id="reset" onclick="this.parentNode.remove(); return false;">Exit</button>`); // onclick="this.parentNode.remove(); return false;" removes the eventDetail when clicked. It has to be written this way as the button is inside the div which is displayed on the fly.
+      <h2>Title: ${detail[0].name}</h2>
+      <h3>Genre: ${detail[0].classifications[0].genre.name}</h3>
+      <p><strong>Event Info:</strong> ${detail[0].pleaseNote + detail[0].info + "."}</p>
+      <p><strong>Ticket Price Range:</strong> ${detail[0].priceRanges[0].currency + detail[0].priceRanges[0].min + " - " + detail[0].priceRanges[1].currency + detail[0].priceRanges[1].max}</p>
+      <a href=${detail[0].url} target="_blank">View Seats & Buy a Ticket</a>
+      <button id="reset" onclick="this.parentNode.remove(); return false;">Exit</button>`); // onclick="this.parentNode.remove(); return false;" removes the eventDetail when clicked. It has to be written this way as the button is inside the div which is displayed on the fly.
+    
+          eventDetails.removeClass('hide');  // displaying the details on the browser once the 'Find out more' link is clicked
+        
+      } else {
+        // Writing the content of the div using javaScript - styling is already done in CSS
+      eventDetails.html(`                     
+      <h2>Title: ${detail[0].name}</h2>
+      <h3>Genre: ${detail[0].classifications[0].genre.name}</h3>
+      <a href=${detail[0].url} target="_blank">View Seats & Buy a Ticket</a>
+      <button id="reset" onclick="this.parentNode.remove(); return false;">Exit</button>`); // onclick="this.parentNode.remove(); return false;" removes the eventDetail when clicked. It has to be written this way as the button is inside the div which is displayed on the fly.
+    
+          eventDetails.removeClass('hide');  // displaying the details on the browser once the 'Find out more' link is clicked
 
-      eventDetails.removeClass('hide');  // displaying the details on the browser once the 'Find out more' link is clicked
-    });
+      }
+
+      
+  });
 
 }
 
