@@ -52,7 +52,7 @@ function displayMatches(matches) {
               <p><b>Date</b>: ${matchObj.dates.start.localDate} </p>
               <p><b>Time</b>: ${matchObj.dates.start.localTime} </p>
               <p><b>Venue</b>: ${matchObj._embedded.venues[0].name} </p>
-              <a data-id="${matchObj.id}" href="">Find Out More</a>
+              <a data-id="${matchObj.id}" href="#" onClick="findOutMore(dataset.id); return false;">Find Out More</a>
               </div> 
             `);
       addMarker(map, matchObj);
@@ -91,7 +91,7 @@ function findOutMore(eventId) {
   $.get(proxyURL + encodeURIComponent(apiURL + apiKey + `&id=${eventId}`))
     .then(function (data) {
       var detail = JSON.parse(data.contents)._embedded.events;
-      console.log(detail);
+      //console.log(detail);
       var eventDetails = $('.detail-display'); // Targeting the div that holds the details to be displayed
 
       if (detail[0].pleaseNote) {
@@ -102,7 +102,7 @@ function findOutMore(eventId) {
       <p><strong>Event Info:</strong> ${detail[0].pleaseNote + detail[0].info + "."}</p>
       <p><strong>Ticket Price Range:</strong> ${detail[0].priceRanges[0].currency + detail[0].priceRanges[0].min + " - " + detail[0].priceRanges[1].currency + detail[0].priceRanges[1].max}</p>
       <a href=${detail[0].url} target="_blank">View Seats & Buy a Ticket</a>
-      <button id="reset" onclick="this.parentNode.remove(); return false;">Exit</button>`); // onclick="this.parentNode.remove(); return false;" removes the eventDetail when clicked. It has to be written this way as the button is inside the div which is displayed on the fly.
+      <button id="reset" onclick="closeModal()">Exit</button>`); // onclick="closeModal()";" removes the eventDetail when clicked. It has to be written this way as the button is inside the div which is displayed on the fly.
     
           eventDetails.removeClass('hide');  // displaying the details on the browser once the 'Find out more' link is clicked
         
@@ -112,7 +112,7 @@ function findOutMore(eventId) {
       <h2>Title: ${detail[0].name}</h2>
       <h3>Genre: ${detail[0].classifications[0].genre.name}</h3>
       <a href=${detail[0].url} target="_blank">View Seats & Buy a Ticket</a>
-      <button id="reset" onclick="this.parentNode.remove(); return false;">Exit</button>`); // onclick="this.parentNode.remove(); return false;" removes the eventDetail when clicked. It has to be written this way as the button is inside the div which is displayed on the fly.
+      <button id="reset" onclick="closeModal()">Exit</button>`); // onclick="closeModal()" removes the eventDetail when clicked. It has to be written this way as the button is inside the div which is displayed on the fly.
     
           eventDetails.removeClass('hide');  // displaying the details on the browser once the 'Find out more' link is clicked
 
@@ -123,21 +123,16 @@ function findOutMore(eventId) {
 
 }
 
+// Function to close modal and to allow modal to work for any 'find out more' link clicked
+function closeModal() {
+  var eventDetails = $('.detail-display');
+  eventDetails.addClass('hide');
+}
 
 
 // Create an initializing function - when the page loads, things that will run initially - listens for a key press*/
 function init() {
   searchInput.keydown(getEventData);
-
-  // Add event listener for when 'find out more' button on an event is clicked
-  itemWrapper.click(function (event) {
-    event.preventDefault();
-    var anchorLink = event.target;  // Targeting the actual button clicked as there are many buttons on the page
-
-    if (anchorLink.tagName === 'A') {             // If the button clicked is the anchor tag <a> button then call the findOutMore() function created above and pass in the id of the event clicked
-      findOutMore(anchorLink.dataset.id)
-    }
-  });
 }
 
 init();
