@@ -11,7 +11,7 @@ N/A
 
 ## Usage
 
-To find events, enter your city into the searchbar. The API supports search in United States, Canada, Mexico, Australia, New Zealand, United Kingdom, Ireland, and a few other European countries. You will be able to see events' titles, dates, times, and venues. To learn more about a certain event, follow the respective link to Ticketmaster's website. To view venue locations on the map, scroll down.
+To find events, enter your city into the searchbar. The API supports search in United States, Canada, Mexico, Australia, New Zealand, United Kingdom, Ireland, and a few other European countries. You will be able to see events' titles, dates, times, and venues. To learn more about a certain event, click the "Find out more" button. To view the available tickets, follow the respective link to Ticketmaster's website. To see venue locations on the map, scroll down.
 ![example search](/images/screenshot1.png)
 ![venue markers](/images/screenshot2.png)
 
