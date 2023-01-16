@@ -7,7 +7,7 @@ var proxyURL = "https://api.allorigins.win/get?url=";
 // Targeting html elements and store to variables
 var searchInput = $(".search");
 var itemWrapper = $("main");
-var exitButton = $('#reset');
+var exitButton = $("#reset");
 var map;
 
 // creates a map
@@ -69,66 +69,73 @@ function getEventData(event) {
     itemWrapper.html(`<div class="loader"></div>`);
     // Checking to see if the key pressed is the enter key and if some text is typed in the input box
 
+    localStorage.setItem("location", searchText); //saves location entered by user
+    document.querySelector("h1").innerHTML =
+      "Events in " +
+      localStorage.getItem("location").charAt(0).toUpperCase() +
+      localStorage.getItem("location").slice(1);
+
     // Making an AJAX Request to get data from a server using the Ticketmaster API. The proxyURL and encodeURIComponent() function takes care of the CORS issue in the browser
     $.get(
       proxyURL + encodeURIComponent(apiURL + apiKey + `&city=${searchText}`)
-    )
-      .then(function (data) {
-        var events = JSON.parse(data.contents)._embedded.events;
-        //console.log(events);
-        displayMatches(events); // fetching events from external server based on the city the user types in - the .get() method in jQuery makes this so easy it's like the fetch method in vanilla javaScript but it does all the json and parsing for us
-      })
+    ).then(function (data) {
+      var events = JSON.parse(data.contents)._embedded.events;
+      //console.log(events);
+      displayMatches(events); // fetching events from external server based on the city the user types in - the .get() method in jQuery makes this so easy it's like the fetch method in vanilla javaScript but it does all the json and parsing for us
+    });
     /*.catch(
       (error) => itemWrapper.html(`<p class="no-search">NO EVENTS FOUND</p>`) 
     ); // Displaying no events found if city entered is not within API's search radius*/
   }
 }
 
-
 // Function to show more details if the 'Find out more' link is clicked on an event
 function findOutMore(eventId) {
   // Making an AJAX Request to get data from a Event server using the movie ID
-  $.get(proxyURL + encodeURIComponent(apiURL + apiKey + `&id=${eventId}`))
-    .then(function (data) {
+  $.get(proxyURL + encodeURIComponent(apiURL + apiKey + `&id=${eventId}`)).then(
+    function (data) {
       var detail = JSON.parse(data.contents)._embedded.events;
       //console.log(detail);
-      var eventDetails = $('.detail-display'); // Targeting the div that holds the details to be displayed
+      var eventDetails = $(".detail-display"); // Targeting the div that holds the details to be displayed
 
       if (detail[0].pleaseNote) {
         // Writing the content of the div using javaScript - styling is already done in CSS
-      eventDetails.html(`                     
+        eventDetails.html(`                     
       <h2>Title: ${detail[0].name}</h2>
       <h3>Genre: ${detail[0].classifications[0].genre.name}</h3>
-      <p><strong>Event Info:</strong> ${detail[0].pleaseNote + detail[0].info + "."}</p>
-      <p><strong>Ticket Price Range:</strong> ${detail[0].priceRanges[0].currency + detail[0].priceRanges[0].min + " - " + detail[0].priceRanges[1].currency + detail[0].priceRanges[1].max}</p>
+      <p><strong>Event Info:</strong> ${
+        detail[0].pleaseNote + detail[0].info + "."
+      }</p>
+      <p><strong>Ticket Price Range:</strong> ${
+        detail[0].priceRanges[0].currency +
+        detail[0].priceRanges[0].min +
+        " - " +
+        detail[0].priceRanges[1].currency +
+        detail[0].priceRanges[1].max
+      }</p>
       <a href=${detail[0].url} target="_blank">View Seats & Buy a Ticket</a>
       <button id="reset" onclick="closeModal()">Exit</button>`); // onclick="closeModal()";" removes the eventDetail when clicked. It has to be written this way as the button is inside the div which is displayed on the fly.
-    
-          eventDetails.removeClass('hide');  // displaying the details on the browser once the 'Find out more' link is clicked
-        
+
+        eventDetails.removeClass("hide"); // displaying the details on the browser once the 'Find out more' link is clicked
       } else {
         // Writing the content of the div using javaScript - styling is already done in CSS
-      eventDetails.html(`                     
+        eventDetails.html(`                     
       <h2>Title: ${detail[0].name}</h2>
       <h3>Genre: ${detail[0].classifications[0].genre.name}</h3>
       <a href=${detail[0].url} target="_blank">View Seats & Buy a Ticket</a>
       <button id="reset" onclick="closeModal()">Exit</button>`); // onclick="closeModal()" removes the eventDetail when clicked. It has to be written this way as the button is inside the div which is displayed on the fly.
-    
-          eventDetails.removeClass('hide');  // displaying the details on the browser once the 'Find out more' link is clicked
 
+        eventDetails.removeClass("hide"); // displaying the details on the browser once the 'Find out more' link is clicked
       }
-
-      
-  });
-
+    }
+  );
 }
 
 // Function to close modal and to allow modal to work for any 'find out more' link clicked
 function closeModal() {
-  var eventDetails = $('.detail-display');
-  eventDetails.addClass('hide');
+  var eventDetails = $(".detail-display");
+  eventDetails.addClass("hide");
 }
-
 
 // Create an initializing function - when the page loads, things that will run initially - listens for a key press*/
 function init() {
